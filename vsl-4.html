@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="no"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Din personlige video · Dametrimmen</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FBF6EE;--ink:#2B1F3A;--sec:#6E6076;--accent:#B5323C;--gold:#C79A4B;--card:#fff;--border:#EAD9C2;--plum:#241433;--frame:#C79A4B;}
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-size:18px;line-height:1.62;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:720px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.1;font-weight:600;}
+  h1{font-size:clamp(36px,5.6vw,64px);letter-spacing:-.3px;}
+  h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:.4em;}
+  h3{font-size:22px;}
+  p{margin:0 0 1em;}
+  .eyebrow{display:inline-block;font-family:'Jost',sans-serif;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:16px;}
+  .kicker{display:inline-block;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:10px;}
+  .sub{color:var(--sec);font-size:20px;max-width:620px;margin-left:auto;margin-right:auto;}
+  .lead{font-family:'Cormorant Garamond',serif;font-size:25px;line-height:1.35;}
+  .center{text-align:center;}
+  /* hero media */
+  .hero-media{border-radius:20px;overflow:hidden;}
+  .hero-media img,.hero-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-media.framed{aspect-ratio:4/5;border:6px solid var(--frame);box-shadow:0 22px 50px rgba(42,22,51,.22);}
+  .hero-media.small{aspect-ratio:4/5;max-width:300px;}
+  .hero-media.tilt{aspect-ratio:4/5;border:8px solid #fff;transform:rotate(2deg);box-shadow:0 26px 60px rgba(0,0,0,.45);}
+  /* hero layouts */
+  .hero-split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:40px 24px 20px;}
+  .hero-center{text-align:center;max-width:720px;margin:0 auto;padding:40px 24px 10px;}
+  .hero-center .hero-media{max-width:260px;margin:26px auto;}
+  .hero-sub{color:var(--sec);font-size:20px;margin-top:16px;max-width:52ch;}
+  .hero-bleed{position:relative;min-height:72vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;}
+  .hero-bleed .hero-bg{position:absolute;inset:0;}
+  .hero-bleed .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,22,51,.1),rgba(42,22,51,.55) 55%,rgba(42,22,51,.92));}
+  .hero-bleed .hero-inner{position:relative;padding-bottom:56px;padding-top:40px;}
+  .hero-bleed h1{color:#fff;max-width:14ch;} .hero-bleed .hero-sub{color:#EADFF0;}
+  .hero-formright{display:grid;grid-template-columns:1fr 440px;gap:40px;align-items:center;padding:30px 24px;}
+  .hero-editorial{display:grid;grid-template-columns:1fr 1fr;min-height:72vh;}
+  .hero-editorial .he-text{display:flex;flex-direction:column;justify-content:center;padding:40px clamp(24px,5vw,64px);}
+  .hero-editorial .he-photo{position:relative;}
+  .hero-editorial .he-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media(max-width:860px){.hero-editorial{grid-template-columns:1fr;}.hero-editorial .he-photo{height:62vh;}}
+  .announce{background:color-mix(in srgb,var(--accent) 12%,#fff);border-bottom:1px solid var(--border);text-align:center;padding:9px;font-weight:700;color:var(--accent);font-size:14px;}
+  /* benefits */
+  .benefits{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px;}
+  .benefits li{display:flex;gap:12px;align-items:flex-start;font-size:18px;}
+  .benefits .ck{color:#2E6049;font-weight:800;} .benefits .e{font-size:24px;}
+  .benefits.big li{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 20px;box-shadow:0 8px 20px rgba(42,22,51,.05);}
+  .benefits.big{max-width:720px;margin:24px auto;}
+  /* form */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px 26px;box-shadow:0 16px 40px rgba(42,22,51,.1);}
+  .formwrap{max-width:540px;margin:14px auto 0;}
+  .optin .fr{margin-bottom:14px;}
+  .optin label{display:block;font-weight:700;font-size:14px;margin:0 0 6px;}
+  .optin input{width:100%;padding:15px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:18px;font-family:inherit;background:#fff;color:#2A1633;}
+  .optin input:focus{outline:none;border-color:var(--accent);}
+  .hero-card h3{margin-bottom:14px;text-align:center;}
+  .reassure{text-align:center;color:var(--sec);font-size:14px;margin-top:12px;}
+  /* buttons */
+  .btn{display:block;width:100%;max-width:460px;margin:20px auto 0;text-align:center;cursor:pointer;border:none;
+    background:#1E4C3A;color:#fff;font-family:'Jost',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;
+    padding:18px 22px;border-radius:14px;text-decoration:none;}
+  .hero-split .hero-btn,.hero-editorial .hero-btn{margin-left:0;} .hero-formright .btn,.formwrap .btn,.hero-card .btn{margin-top:8px;}
+  .btn:hover{filter:brightness(1.05);}
+  /* sections */
+  .section{padding:52px 0;}
+  .section.tint{background:color-mix(in srgb,var(--accent) 6%,var(--bg));}
+  .two{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .two.bio{grid-template-columns:.8fr 1.2fr;}
+  .includes{list-style:none;padding:0;margin:0;}
+  .includes li{display:flex;gap:12px;margin:0 0 11px;font-size:17px;}
+  .includes .ck{color:#2E6049;font-weight:800;}
+  /* price */
+  .pricebox{background:var(--plum);color:#fff;border-radius:22px;padding:30px;text-align:center;}
+  .price-old{color:#CBB6D6;text-decoration:line-through;font-size:18px;margin:0;}
+  .price-now{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:58px;color:var(--gold);margin:4px 0;line-height:1;}
+  .price-terms{color:#EFE6F4;font-size:16px;margin:4px 0 0;}
+  /* countdown */
+  .countdown{display:flex;gap:10px;justify-content:center;margin:18px 0 22px;}
+  .cd{background:var(--plum);color:#fff;border-radius:12px;padding:10px 14px;min-width:66px;}
+  .cd b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;}
+  .cd span{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#CBB6D6;}
+  /* bonuses */
+  .bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px 0;}
+  .bonus{background:var(--card);border:2px solid var(--accent);border-radius:18px;padding:22px 18px;text-align:center;}
+  .bonus .bemo{width:52px;height:52px;border-radius:50%;background:color-mix(in srgb,var(--gold) 20%,#fff);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 10px;}
+  .bonus .bnum{display:inline-block;font-weight:800;letter-spacing:2px;font-size:12px;color:var(--accent);margin-bottom:6px;}
+  .bonus p{font-size:15px;color:var(--sec);margin:0;}
+  .note-gold{color:var(--gold);font-weight:700;}
+  /* quotes */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;text-align:left;}
+  .quote{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px;}
+  .quote p{margin:0;font-size:16px;} .quote .who{color:var(--accent);font-weight:700;}
+  /* final */
+  .section.final{background:var(--plum);color:#EFE6F4;}
+  .section.final h2{color:#fff;} .final-sub{color:#CDBFD8;}
+  .foot{text-align:center;color:var(--sec);font-size:13px;padding:34px 20px;opacity:.85;}
+  @media(max-width:860px){
+    .hero-split,.hero-formright,.two,.two.bio{grid-template-columns:1fr;gap:26px;}
+    .hero-formright .hero-card{order:-1;}
+    .bonus-grid{grid-template-columns:1fr;} .quotes{grid-template-columns:1fr;}
+    .hero-media.tilt{transform:none;}
+    body{font-size:17px;}
+  }body:before{content:"";display:block;height:7px;background:repeating-linear-gradient(90deg,#B5323C 0 16px,#1E4C3A 16px 32px,#C79A4B 32px 48px);}
+         .hero-center:before{content:"✦ ❄ ✦ ❄ ✦ ❄ ✦ ❄ ✦ ❄ ✦ ❄ ✦";display:block;text-align:center;letter-spacing:10px;color:#C79A4B;font-size:14px;opacity:.75;margin-bottom:14px;}
+         .eyebrow{background:#B5323C;color:#fff;padding:7px 16px;border-radius:999px;}
+         .btn{background:linear-gradient(180deg,#2A6A4F,#1E4C3A);border:2px solid #C79A4B;box-shadow:0 12px 30px rgba(30,76,58,.4);} .btn:before{content:"🎁 ";}
+         .bonus{border-color:#C79A4B;} .note-gold{color:#B5323C;}
+.lights{position:fixed;top:0;left:0;right:0;height:16px;z-index:60;display:flex;justify-content:space-around;pointer-events:none;}
+.lights i{width:9px;height:9px;border-radius:50%;margin-top:4px;box-shadow:0 0 8px 2px currentColor;animation:blink 1.4s infinite ease-in-out;}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.2;transform:scale(.7);}}
+.snow{position:fixed;inset:0;pointer-events:none;z-index:55;overflow:hidden;}
+.snow i{position:absolute;top:-24px;color:#e3edfb;opacity:.85;font-style:normal;text-shadow:0 0 5px rgba(180,205,240,.7);animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-24px) translateX(0) rotate(0);}100%{transform:translateY(106vh) translateX(var(--sx,20px)) rotate(360deg);}}
+.xtree{position:fixed;left:16px;bottom:10px;z-index:57;font-size:52px;line-height:1;pointer-events:none;transform-origin:bottom center;animation:sway 3.2s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.3));}
+.xtree.r{left:auto;right:16px;animation-delay:.6s;font-size:40px;}
+@keyframes sway{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
+@media(max-width:700px){.xtree.r{display:none;}.xtree{font-size:40px;}}
+@media(prefers-reduced-motion:reduce){.snow,.lights i,.xtree{animation:none;}.snow{display:none;}}
+
+.videowrap{max-width:860px;margin:0 auto;}
+.vframe{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:3px solid var(--frame);box-shadow:0 26px 60px rgba(0,0,0,.3);background:#120a14;}
+.vframe img{width:100%;height:100%;object-fit:cover;opacity:.55;}
+.vframe .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;gap:14px;}
+.vframe .pbtn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.92);color:#2A1633;display:flex;align-items:center;justify-content:center;font-size:34px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.4);}
+.vframe .plabel{font-weight:700;letter-spacing:1px;font-size:15px;text-transform:uppercase;}
+.locknote{text-align:center;color:var(--sec);margin:20px 0 0;font-size:16px;}
+.revealbtn{display:block;margin:16px auto 0;}
+.sales{display:none;}
+.sales.open{display:block;animation:fadein .5s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+</style></head>
+<body data-theme="4">
+<div class="lights" id="lights"></div><div class="snow" id="snow"></div><div class="xtree">🎄</div><div class="xtree r">🎄</div>
+  <section class="section"><div class="wrap center">
+    <span class="eyebrow">🎄 Black Week hos Kari</span>
+    <h1 style="max-width:16ch;margin:0 auto .4em;">Vårformen bygges om vinteren</h1>
+    <p class="sub">Her er din personlige video. Se den helt til slutt, så låser tilbudet seg opp under videoen.</p>
+  </div>
+  <div class="wrap" style="margin-top:30px;">
+    <!-- PROD: bytt .vframe-innhold med ekte video-embed (WebinarFuel/Vimeo/YouTube). Lås opp .sales når videoen 'ended'. -->
+    <div class="videowrap">
+      <div class="vframe" id="vframe">
+        <img src="img/xmas.jpg" alt="">
+        <div class="play"><div class="pbtn" id="pbtn">▶</div><div class="plabel">Spill av videoen</div></div>
+      </div>
+      <p class="locknote" id="locknote">🔒 Tilbudet og julebonusene åpner seg når videoen er ferdig.</p>
+      <button class="btn revealbtn" id="revealbtn" style="display:none;">Jeg har sett ferdig videoen →</button>
+    </div>
+  </div></section>
+
+  <div class="sales" id="sales">
+    <section class="section tint"><div class="wrap center">
+      <span class="kicker">🎄 Black Friday · 25.–27. november</span>
+      <h2>Ingen rabatt. Tre ekstra julebonuser.</h2>
+      <p class="sub">Blir du med nå, og frem til fredag 27. november kl. 23.59, får du tre bonuser i tillegg til hele kurset:</p>
+      <div class="countdown" id="cd"><div class="cd"><b id="cd-d">--</b><span>dager</span></div><div class="cd"><b id="cd-h">--</b><span>timer</span></div><div class="cd"><b id="cd-m">--</b><span>min</span></div><div class="cd"><b id="cd-s">--</b><span>sek</span></div></div>
+      <div class="bonus-grid"><div class="bonus"><div class="bemo">🎄</div><span class="bnum">BONUS 1</span><h3>Karis Julekalender</h3><p>24 luker med trim, tips og oppmuntring, fra 1. til 24. desember.</p></div><div class="bonus"><div class="bemo">💜</div><span class="bnum">BONUS 2</span><h3>En time med Kari</h3><p>LIVE på Zoom, der vi ser på akkurat din kropp og dine mål.</p></div><div class="bonus"><div class="bemo">🦶</div><span class="bnum">BONUS 3</span><h3>Glade og sunne føtter</h3><p>Et helt kurs for stødige, sterke føtter, med på kjøpet.</p></div></div>
+      <p class="note-gold">⏰ Fra lørdag 28. november er det bare Julekalenderen igjen.</p>
+    </div></section>
+
+    <section class="section"><div class="wrap two">
+      <div><span class="kicker">Programmet</span><h2>Ut av lenestolen · 8 uker</h2>
+        <ul class="includes"><li><span class="ck">✔</span> 10 helkropps hjemmeøkter med gradvis progresjon</li><li><span class="ck">✔</span> Gåprogram, ute og på tredemølle</li><li><span class="ck">✔</span> Pust, tøying og ro-økter</li><li><span class="ck">✔</span> Holdning, balanse og trygghet</li><li><span class="ck">✔</span> Kursmoduler om trening, mat og helse + enkel ukemeny</li><li><span class="ck">✔</span> 5 LIVE Zoom-treff med Kari</li><li><span class="ck">✔</span> Trimstrikker (4 stk) i posten</li><li><span class="ck">✔</span> 3 mnd utvidet videotek og LIVE-trim etterpå</li></ul></div>
+      <div><div class="pricebox"><p class="price-old">Ordinær verdi 15 700,-</p><p class="price-now">6 900,-</p><p class="price-terms">eller 2 × 3 450,-<br>eller med Klarna</p></div><a class="btn" href="#TODO-CHECKOUT">JA, JEG VIL BYGGE VÅRFORMEN MIN →</a></div>
+    </div></section>
+
+    <section class="section tint"><div class="wrap center"><h2>Hva andre damer har opplevd</h2>
+      <div class="quotes"><div class="quote"><p>«Jeg hadde ikke sittet med beina i kors på 20 år! Plutselig en dag gjorde jeg det.» <span class="who">— Anne</span></p></div><div class="quote"><p>«Nå kan jeg leke på gulvet med barnebarna mine igjen, og komme meg opp uten hjelp.» <span class="who">— Marit</span></p></div><div class="quote"><p>«Jeg kan ikke gjøre noe bedre for deg enn det du allerede gjør. Bare fortsett!» <span class="who">— Monas knespesialist</span></p></div><div class="quote"><p>«3 dager, 7,5 mil på ski over Finnmarksvidda. 42 år siden sist.» <span class="who">— Torild</span></p></div></div></div></section>
+
+    <section class="section"><div class="narrow center">
+      <span class="kicker">🎄 Bonus 1 i detalj</span><h2>Karis Julekalender — 24 luker</h2>
+      <p class="sub">Hver morgen i desember åpner du en luke med en kort økt, et tips eller en oppmuntring fra meg.</p></div></section>
+
+    <section class="section final center"><div class="narrow">
+      <h2>Våren kommer uansett. Hvordan vil du at den skal kjennes?</h2>
+      <p class="final-sub">Prisen er den samme, 6 900,-. Det er bonusene som er Black Friday-gaven min til deg.</p>
+      <a class="btn" href="#TODO-CHECKOUT">JA, JEG VIL HA ALLE TRE BONUSENE →</a>
+      <p class="reassure">Tilbudet med alle tre bonusene stenger fredag 27. november kl. 23.59.</p></div></section>
+  </div>
+  <div class="foot">Dametrimmen · Kari Jaquesson</div><script>
+(function(){var colors=['#E0483C','#F0C45A','#2E8B57','#ffffff','#5AA9E6'];
+var L=document.getElementById('lights');
+if(L){for(var i=0;i<26;i++){var b=document.createElement('i');var c=colors[i%colors.length];b.style.color=c;b.style.background=c;b.style.animationDelay=(i*0.11)+'s';L.appendChild(b);}}
+var S=document.getElementById('snow');
+if(S){var n=window.innerWidth<700?20:44;for(var j=0;j<n;j++){var f=document.createElement('i');f.textContent=(j%3?'\u2744':'\u2022');var sz=(Math.random()*14+8);f.style.left=(Math.random()*100)+'vw';f.style.fontSize=sz+'px';f.style.opacity=(Math.random()*0.55+0.4);var dur=(Math.random()*8+7);f.style.animationDuration=dur+'s';f.style.animationDelay=(-Math.random()*dur)+'s';f.style.setProperty('--sx',(Math.random()*80-40)+'px');S.appendChild(f);}}})();
+
+  (function(){var f=document.getElementById('vframe'),pb=document.getElementById('pbtn'),rb=document.getElementById('revealbtn'),s=document.getElementById('sales'),ln=document.getElementById('locknote');
+    function openSales(){s.classList.add('open');ln.textContent='✅ Tilbudet er låst opp. Bla ned.';rb.style.display='none';setTimeout(function(){s.scrollIntoView({behavior:'smooth'});},200);}
+    // DEMO: klikk play -> vis "ferdig"-knapp etter 2 sek. PROD: bruk videoens 'ended'-event i stedet.
+    if(pb){pb.addEventListener('click',function(){pb.textContent='⏸';setTimeout(function(){rb.style.display='block';ln.textContent='🔓 Du kan åpne tilbudet nå.';},2000);});}
+    if(rb){rb.addEventListener('click',openSales);}
+  })();
+(function(){var t=new Date('2026-11-27T23:59:00+01:00').getTime();
+var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+if(!d)return;function p(n){return(n<10?'0':'')+n;}function tk(){var l=t-Date.now();if(l<0)l=0;
+d.textContent=Math.floor(l/864e5);h.textContent=p(Math.floor(l%864e5/36e5));m.textContent=p(Math.floor(l%36e5/6e4));s.textContent=p(Math.floor(l%6e4/1e3));}
+tk();setInterval(tk,1000);})();</script></body></html>
