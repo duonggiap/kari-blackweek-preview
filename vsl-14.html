@@ -112,8 +112,7 @@
         <img src="img/ice.jpg" alt="">
         <div class="play"><div class="pbtn" id="pbtn">▶</div><div class="plabel">Spill av videoen</div></div>
       </div>
-      <p class="locknote" id="locknote">🔒 Tilbudet og julebonusene åpner seg når videoen er ferdig.</p>
-      <button class="btn revealbtn" id="revealbtn" style="display:none;">Jeg har sett ferdig videoen →</button>
+      <p class="locknote" id="locknote">🔒 Tilbudet og julebonusene åpner seg automatisk når videoen er ferdig.</p>
     </div>
   </div></section>
 
@@ -153,11 +152,11 @@ if(L){for(var i=0;i<26;i++){var b=document.createElement('i');var c=colors[i%col
 var S=document.getElementById('snow');
 if(S){var n=window.innerWidth<700?20:44;for(var j=0;j<n;j++){var f=document.createElement('i');f.textContent=(j%3?'\u2744':'\u2022');var sz=(Math.random()*14+8);f.style.left=(Math.random()*100)+'vw';f.style.fontSize=sz+'px';f.style.opacity=(Math.random()*0.55+0.4);var dur=(Math.random()*8+7);f.style.animationDuration=dur+'s';f.style.animationDelay=(-Math.random()*dur)+'s';f.style.setProperty('--sx',(Math.random()*80-40)+'px');S.appendChild(f);}}})();
 
-  (function(){var f=document.getElementById('vframe'),pb=document.getElementById('pbtn'),rb=document.getElementById('revealbtn'),s=document.getElementById('sales'),ln=document.getElementById('locknote');
-    function openSales(){s.classList.add('open');ln.textContent='✅ Tilbudet er låst opp. Bla ned.';rb.style.display='none';setTimeout(function(){s.scrollIntoView({behavior:'smooth'});},200);}
-    // DEMO: klikk play -> vis "ferdig"-knapp etter 2 sek. PROD: bruk videoens 'ended'-event i stedet.
-    if(pb){pb.addEventListener('click',function(){pb.textContent='⏸';setTimeout(function(){rb.style.display='block';ln.textContent='🔓 Du kan åpne tilbudet nå.';},2000);});}
-    if(rb){rb.addEventListener('click',openSales);}
+  (function(){var pb=document.getElementById('pbtn'),s=document.getElementById('sales'),ln=document.getElementById('locknote'),play=document.querySelector('#vframe .play');
+    function openSales(){s.classList.add('open');ln.textContent='✅ Tilbudet er åpnet.';setTimeout(function(){s.scrollIntoView({behavior:'smooth'});},250);}
+    // PROD: erstatt med ekte video; kall openSales() på videoens 'ended'-event.
+    // DEMO: klikk play -> videoen "spilles" -> tilbudet åpner seg automatisk når den er ferdig.
+    if(pb){pb.addEventListener('click',function(){if(play)play.style.display='none';ln.textContent='▶ Videoen spilles ... tilbudet åpner seg automatisk når den er ferdig.';setTimeout(openSales,4000);});}
   })();
 (function(){var t=new Date('2026-11-27T23:59:00+01:00').getTime();
 var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
