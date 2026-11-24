@@ -89,6 +89,7 @@
 .videowrap{max-width:860px;margin:0 auto;}
 .vframe{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:3px solid var(--frame);box-shadow:0 26px 60px rgba(0,0,0,.3);background:#120a14;}
 .vframe img{width:100%;height:100%;object-fit:cover;opacity:.55;}
+.vframe>div,.vframe iframe{width:100%!important;height:100%!important;border:0;}
 .vframe .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;gap:14px;}
 .vframe .pbtn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.92);color:#2A1633;display:flex;align-items:center;justify-content:center;font-size:34px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.4);}
 .vframe .plabel{font-weight:700;letter-spacing:1px;font-size:15px;text-transform:uppercase;}
@@ -109,14 +110,14 @@
     <!-- PROD: bytt .vframe-innhold med ekte video-embed (WebinarFuel/Vimeo/YouTube). Lås opp .sales når videoen 'ended'. -->
     <div class="videowrap">
       <div class="vframe" id="vframe">
-        <img src="img/ice.jpg" alt="">
-        <div class="play"><div class="pbtn" id="pbtn">▶</div><div class="plabel">Spill av videoen</div></div>
+        <div class="kartra_video_containerNj7wmtnVDZXc js_kartra_trackable_object" data-kt-type="video" data-kt-value="Nj7wmtnVDZXc" data-kt-owner="Or0W2nkJ"></div>
       </div>
-      <p class="locknote" id="locknote">🔒 Tilbudet og julebonusene åpner seg automatisk når videoen er ferdig.</p>
+      <p class="locknote" id="locknote">👀 Forhåndsvisning: hele salgsdelen vises nedenfor. I den ekte versjonen åpner den seg automatisk når videoen er ferdig.</p>
     </div>
+    <script src="https://app.kartra.com/video/Nj7wmtnVDZXc"></script>
   </div></section>
 
-  <div class="sales" id="sales">
+  <div class="sales open" id="sales">
     <section class="section tint"><div class="wrap center">
       <span class="kicker">🎄 Black Friday · 25.–27. november</span>
       <h2>Ingen rabatt. Tre ekstra julebonuser.</h2>
@@ -152,11 +153,15 @@ if(L){for(var i=0;i<26;i++){var b=document.createElement('i');var c=colors[i%col
 var S=document.getElementById('snow');
 if(S){var n=window.innerWidth<700?20:44;for(var j=0;j<n;j++){var f=document.createElement('i');f.textContent=(j%3?'\u2744':'\u2022');var sz=(Math.random()*14+8);f.style.left=(Math.random()*100)+'vw';f.style.fontSize=sz+'px';f.style.opacity=(Math.random()*0.55+0.4);var dur=(Math.random()*8+7);f.style.animationDuration=dur+'s';f.style.animationDelay=(-Math.random()*dur)+'s';f.style.setProperty('--sx',(Math.random()*80-40)+'px');S.appendChild(f);}}})();
 
-  (function(){var pb=document.getElementById('pbtn'),s=document.getElementById('sales'),ln=document.getElementById('locknote'),play=document.querySelector('#vframe .play');
-    function openSales(){s.classList.add('open');ln.textContent='✅ Tilbudet er åpnet.';setTimeout(function(){s.scrollIntoView({behavior:'smooth'});},250);}
-    // PROD: erstatt med ekte video; kall openSales() på videoens 'ended'-event.
-    // DEMO: klikk play -> videoen "spilles" -> tilbudet åpner seg automatisk når den er ferdig.
-    if(pb){pb.addEventListener('click',function(){if(play)play.style.display='none';ln.textContent='▶ Videoen spilles ... tilbudet åpner seg automatisk når den er ferdig.';setTimeout(openSales,4000);});}
+  (function(){var PREVIEW=true;
+    var s=document.getElementById('sales'),ln=document.getElementById('locknote');
+    function openSales(){if(!s.classList.contains('open')){s.classList.add('open');ln.textContent='✅ Tilbudet er åpnet.';setTimeout(function(){s.scrollIntoView({behavior:'smooth'});},250);}}
+    if(PREVIEW){return;} // forhåndsvisning: salgsdelen vises allerede
+    // Lytt etter at Kartra-videoen er ferdig (player poster melding når den slutter).
+    window.addEventListener('message',function(e){try{var o=String(e.origin||'');if(o.indexOf('kartra')<0&&o.indexOf('genndi')<0)return;var d=e.data;var t=(typeof d==='string'?d:JSON.stringify(d||'')).toLowerCase();if(t.indexOf('ended')>-1||t.indexOf('complete')>-1||t.indexOf('finish')>-1||t.indexOf('"percent":100')>-1){openSales();}}catch(err){}});
+    // Reserve: åpne automatisk etter videoens lengde (sett antall sekunder = videolengden).
+    var REVEAL_AFTER_SECONDS=0; // 0 = av. Eksempel: 17*60 for en 17-min video.
+    if(REVEAL_AFTER_SECONDS>0){setTimeout(openSales,REVEAL_AFTER_SECONDS*1000);}
   })();
 (function(){var t=new Date('2026-11-27T23:59:00+01:00').getTime();
 var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
