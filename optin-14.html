@@ -74,6 +74,32 @@
     .hero-split,.hero-formright,.hero-editorial,.two,.two.bio{grid-template-columns:1fr;gap:28px;}
     .hero-editorial .he-photo{height:60vh;} .bonus-grid,.quotes{grid-template-columns:1fr;} body{font-size:20px;}
   }
+.nav{max-width:1120px;margin:0 auto;padding:22px 28px 6px;display:flex;align-items:center;gap:13px;}
+.nav img{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);}
+.nav .wm{font-weight:800;font-size:23px;letter-spacing:.5px;color:var(--ink);}
+.ohero{max-width:1120px;margin:0 auto;padding:16px 28px 36px;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
+.ohero h1{margin:0 0 16px;} .ohero h1 .gold{color:var(--gold);}
+.ohero .osub{color:var(--sec);font-size:22px;margin:0 0 26px;max-width:46ch;}
+.ophoto{position:relative;}
+.ophoto .img{aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:4px solid var(--frame);box-shadow:0 26px 62px rgba(0,0,0,.4);}
+.ophoto .img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.gv-badge{position:absolute;top:-18px;left:-12px;background:var(--gold);color:var(--plum);border-radius:18px;padding:12px 20px 12px 14px;display:flex;align-items:center;gap:13px;box-shadow:0 14px 34px rgba(0,0,0,.35);transform:rotate(-2deg);}
+.gv-badge .gi{width:42px;height:42px;border-radius:50%;background:var(--plum);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+.gv-badge b{font-size:23px;letter-spacing:.5px;display:block;line-height:1.05;text-transform:uppercase;}
+.gv-badge small{font-size:15px;font-weight:700;}
+.owhy{max-width:1120px;margin:0 auto;padding:4px 28px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.owhy h2{margin:0 0 20px;}
+.bcards{display:grid;gap:15px;}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:17px 20px;display:flex;gap:15px;align-items:center;}
+.bcard .ic{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--plum);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+.bcard p{margin:0;font-size:18px;line-height:1.4;}
+.owhy .card{background:#FDF4E4;border:1px solid var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.28);}
+.owhy .card .optin label{color:#5A3A12;}
+.owhy .card .optin input{background:#fff;color:#2A1633;border:1.5px solid #E6D3B0;}
+.owhy .card .optin input:focus{border-color:var(--gold);}
+.owhy .card .reassure{color:#7A6A50;}
+@media(max-width:860px){.ohero,.owhy{grid-template-columns:1fr;gap:30px;}.gv-badge{left:10px;top:-14px;}.ophoto{max-width:420px;margin:0 auto;}}
+
 .lights{position:fixed;top:0;left:0;right:0;height:16px;z-index:60;display:flex;justify-content:space-around;pointer-events:none;}
 .lights i{width:9px;height:9px;border-radius:50%;margin-top:4px;box-shadow:0 0 8px 2px currentColor;animation:blink 1.4s infinite ease-in-out;}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.2;transform:scale(.7);}}
@@ -101,24 +127,29 @@
 </style></head>
 <body data-theme="14">
 <div class="lights" id="lights"></div><div class="snow" id="snow"></div><div class="xtree">🎄</div><div class="xtree r">🎄</div>
-  
-    <header class="hero hero-editorial">
-      <div class="he-text">
-        <span class="eyebrow">🎄 Black Week hos Kari</span>
-        <h1>Vårformen bygges om vinteren</h1>
-        <p class="hero-sub">Meld deg på bonuslisten og få din egen lenke til en <span style="font-weight:800;color:var(--gold);font-size:1.3em;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;">gratis video</span> onsdag 25. november, pluss tre julebonuser som kun gis bort denne uken.</p>
-        <a class="btn hero-btn" href="#meld">JA, SETT MEG PÅ BONUSLISTEN →</a>
-      </div>
-      <div class="he-photo"><img src="img/ice.jpg" alt="Kari Jaquesson om vinteren" style="object-position:center 30%;"></div>
-    </header>
+  <header class="nav"><img src="img/logo.png" alt="Dametrimmen"><span class="wm">Dametrimmen</span></header>
+  <section class="ohero">
+    <div class="otext">
+      <span class="eyebrow">🎄 Black Week hos Kari</span>
+      <h1>Vårformen bygges om <span class="gold">vinteren</span></h1>
+      <p class="osub">Meld deg på bonuslisten og få din egen lenke til en gratis video onsdag 25. november, pluss tre julebonuser som kun gis bort denne uken.</p>
+      <a class="btn hero-btn" href="#meld">JA, SETT MEG PÅ BONUSLISTEN →</a>
+    </div>
+    <div class="ophoto">
+      <div class="img"><img src="img/ice.jpg" alt="Kari om vinteren"></div>
+      <div class="gv-badge"><span class="gi">🎥</span><span><b>Gratis video</b><small>onsdag 25. november</small></span></div>
+    </div>
+  </section>
   <section class="section"><div class="narrow">
     <p class="lead">Hvert år er det mange av oss som mister litt av formen når mørket og kulden kommer. Ikke på grunn av ett fall, men på grunn av alle turene vi ikke tok.</p>
     <p>Onsdag 25. november åpner jeg en ny video der jeg deler fem ting jeg har lært på 40 år om kroppen, vinteren og våren, og hvordan du bruker de mørke månedene til å bygge vårformen din.</p>
   </div></section>
-  <section class="section tint" id="meld"><div class="narrow">
-    <h2 class="center">Dette får du når du melder deg på</h2>
-    <ul class="benefits big"><li><span class="e">🎬</span><span>Din egen personlige lenke til videoen, åpen 25.–27. november.</span></li><li><span class="e">🎄</span><span>Tilgang til mine tre Black Friday-bonuser, blant annet Julekalenderen med 24 luker.</span></li><li><span class="e">💚</span><span>Tips du kan bruke med en gang, også om du ikke vil være med videre.</span></li></ul>
-    <div class="card formwrap"><form class="optin" action="#TODO-OPTIN" method="POST">
+  <section class="section tint" id="meld"><div class="owhy">
+    <div>
+      <h2>Dette får du når du melder deg på</h2>
+      <div class="bcards"><div class="bcard"><span class="ic">🎥</span><p>Din egen personlige lenke til videoen, åpen 25.–27. november.</p></div><div class="bcard"><span class="ic">🔔</span><p>Tilgang til mine tre Black Friday-bonuser, blant annet Julekalenderen med 24 luker.</p></div><div class="bcard"><span class="ic">💚</span><p>Tips du kan bruke med en gang, også om du ikke vil være med videre.</p></div></div>
+    </div>
+    <div class="card"><form class="optin" action="#TODO-OPTIN" method="POST">
     <div class="fr"><label>Fornavn</label><input name="first_name" required placeholder="Fornavnet ditt"></div>
     <div class="fr"><label>E-post</label><input type="email" name="email" required placeholder="din@epost.no"></div>
     <div class="fr"><label>Mobil (+47)</label><input type="tel" name="phone" placeholder="+47 ..."></div>
