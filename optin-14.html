@@ -74,9 +74,6 @@
     .hero-split,.hero-formright,.hero-editorial,.two,.two.bio{grid-template-columns:1fr;gap:28px;}
     .hero-editorial .he-photo{height:60vh;} .bonus-grid,.quotes{grid-template-columns:1fr;} body{font-size:20px;}
   }
-.nav{max-width:1120px;margin:0 auto;padding:22px 28px 6px;display:flex;align-items:center;gap:13px;}
-.nav img{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);}
-.nav .wm{font-weight:800;font-size:23px;letter-spacing:.5px;color:var(--ink);}
 .ohero{max-width:1120px;margin:0 auto;padding:16px 28px 36px;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
 .ohero h1{margin:0 0 16px;} .ohero h1 .gold{color:var(--gold);}
 .ohero .osub{color:var(--sec);font-size:22px;margin:0 0 26px;max-width:46ch;}
@@ -124,10 +121,23 @@
 .sales{display:none;}
 .sales.open{display:block;animation:fadein .5s ease;}
 @keyframes fadein{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+/* --- brand chrome cloned from dametrimmen.no --- */
+.nav{max-width:1120px;margin:0 auto;padding:22px 28px 6px;display:flex;align-items:center;gap:13px;}
+.nav img{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--border);}
+.nav .brandlock{display:flex;flex-direction:column;line-height:1;}
+.nav .wm{font-weight:800;font-size:22px;letter-spacing:1px;color:var(--ink);}
+.nav .tag{font-size:12px;letter-spacing:4px;color:var(--gold);font-weight:700;margin-top:4px;}
+.sitefoot{border-top:1px solid rgba(255,255,255,.14);margin-top:30px;padding:34px 28px 40px;text-align:center;}
+.sitefoot .fb{display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;}
+.sitefoot .fb img{width:44px;height:44px;border-radius:50%;background:#fff;}
+.sitefoot .fb b{font-size:19px;letter-spacing:1px;color:var(--ink);display:block;line-height:1.1;}
+.sitefoot .fb span{font-size:12px;letter-spacing:3px;color:var(--gold);font-weight:700;}
+.sitefoot p{margin:6px 0;color:var(--sec);font-size:15px;}
+.sitefoot a{color:var(--sec);}
 </style></head>
 <body data-theme="14">
 <div class="lights" id="lights"></div><div class="snow" id="snow"></div><div class="xtree">🎄</div><div class="xtree r">🎄</div>
-  <header class="nav"><img src="img/logo.png" alt="Dametrimmen"><span class="wm">Dametrimmen</span></header>
+  <header class="nav"><img src="img/logo.png" alt="Dametrimmen"><div class="brandlock"><span class="wm">DAMETRIMMEN</span><span class="tag">TRIM MED KARI</span></div></header>
   <section class="ohero">
     <div class="otext">
       <span class="eyebrow">🎄 Black Week hos Kari</span>
@@ -157,7 +167,12 @@
     <p class="reassure">Gratis og uforpliktende. Du kan melde deg av når som helst.</p>
   </form></div>
   </div></section>
-  <div class="foot">Dametrimmen · Kari Jaquesson · Du melder deg på bonuslisten frivillig og kan melde deg av når som helst.</div><script>
+  <footer class="sitefoot">
+  <div class="fb"><img src="img/logo.png" alt=""><span><b>DAMETRIMMEN</b><span>TRIM MED KARI</span></span></div>
+  <p>Kari Jaquesson · «Hele Norges Trimdronning»</p>
+  <p>Kontakt: <a href="mailto:kari@trimtram.no">kari@trimtram.no</a></p>
+  <p>© 2026 Dametrimmen · <a href="#">Personvern</a> · <a href="#">Vilkår</a></p>
+</footer><script>
 (function(){var colors=['#E0483C','#F0C45A','#2E8B57','#ffffff','#5AA9E6'];
 var L=document.getElementById('lights');
 if(L){for(var i=0;i<26;i++){var b=document.createElement('i');var c=colors[i%colors.length];b.style.color=c;b.style.background=c;b.style.animationDelay=(i*0.11)+'s';L.appendChild(b);}}
